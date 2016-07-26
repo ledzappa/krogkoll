@@ -1,0 +1,227 @@
+html, body{
+	height:100%;
+	background-color: #323445;
+	color: #fff;
+}
+
+.video-title{
+	font-size:12px;
+	font-weight: bold;
+	display:inline-block;
+	background-color: #000;
+	color:#fff;
+}
+
+h1.placetitle{
+	margin-bottom: 0px;
+}
+
+#menubar{
+	background-color:rgba(0,0,0,0.8);
+	text-align:center;
+	display:block;
+	position:fixed;
+	z-index:5;
+	border-bottom-style: solid;
+	border-bottom-width:2px;
+	border-color: #000;
+	padding:5px;
+	width:100%;
+	height:60px;
+}
+
+#locationButton{
+	margin-top: -120px;
+	margin-bottom:40px;
+	z-index:4;
+	float:right;
+	width:70px;
+	height:50px;
+}
+
+#homeButton{
+	z-index:4;
+	float:right;
+	width:70px;
+	height:50px;
+}
+
+.get-location-image{
+	display:block;
+	float:right;
+	width:50px;
+	cursor: pointer;
+
+}
+.get-home-image{
+	display:block;
+	float:right;
+	width:50px;
+	cursor: pointer;
+
+}
+
+.video-date{
+	font-size:11px;
+	font-weight: bold;
+	display:inline-block;
+}
+
+.video-thumb{
+	width:100%;
+	display:block;
+}
+
+.video-container{
+	width:200px;
+	height:auto;
+	position:relative;
+	display:inline-block;
+	margin:5px;
+}
+
+@media screen and (max-width: 480px) {
+.video-container{
+	width:100%;
+	height:auto;
+	position:relative;
+	display:inline-block;
+	margin:auto;
+	margin-bottom:15px;
+}
+}
+
+
+#results{
+}
+
+#wrapper{
+	top:60px;
+	padding-top: 60px;
+}
+
+#googleMap{
+  	width:100%;
+  	height:400px;
+  	background-color: #999;
+  	margin:auto;
+}
+
+#filter{
+	margin-top: 20px;
+}
+
+#scrollToToop{
+	color: #444;
+	position: fixed;
+	right:20px;
+	bottom:0px;
+	width:70px; 
+	height:85px;
+	padding:10px; 
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: rgba(0,0,0,0.7);
+	text-align: center;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}
+
+/* PLATSINFO STIL */
+
+#content{
+	width:100%;
+	height:800px;
+	padding-top:60px;
+	margin-top:30px;
+}
+
+#place-top{
+	width:100%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+img.placeimg{
+	display:block;
+	margin-top:10px;
+	width:100%;
+}
+
+.placetitle{
+	display:block;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.placeaddress{
+	margin-bottom:0px;
+}
+
+.placetub{
+
+}
+
+.placeprice{
+	display:block;
+	padding:20px;
+	margin-top:10px;
+	margin-bottom:20px;
+	background-color:red;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 34px;
+	border-radius: 10px;
+}
+
+.placedescription{
+	display:block;
+}
+
+.placerating{
+	margin-top:-70px;
+	float:right;
+	text-align:center;
+	background-color: #000;
+	border-radius: 50%;
+	font-size: 24px;
+	font-weight: bold;
+	height:60px;
+	width:60px;
+	line-height: 60px;
+
+}
+
+/* PLATSER I NÄRHETEN */
+
+.nearbywrapper{
+	height:75px;
+	width:100%;
+	background-color:rgba(0,0,0,0.4);
+	margin-bottom: 10px;
+}
+
+.nearbyimage{
+	height:75px;
+	width:75px;
+	display: inline-block;
+	background-size: cover;
+}
+
+.nearbyinfo{
+	padding-left: 5px;
+	display:inline-block;
+	position: absolute;
+	height:75px;
+	width:200px;
+}
+
+.nearbyinfotitle{
+	display:block;
+	font-size:14px;
+	font-weight: bold;
+}
+
+.nearbyinfoprice{
+	display:block;
+}

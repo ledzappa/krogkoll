@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Krogkoll</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="pics/applogo.png">
+  <link rel="apple-touch-icon" href="pics/applogo.png">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row" id="menubar">
+    <img class="header-logo" src="pics/header2-logo.png">
+  </div>
+  <div class="row" id="wrapper">
+    <div class="col-md-12">
+      <div id="googleMap"></div>
+      <div class="col-md-12" id="locationButton">
+      <img class="get-location-image" onClick="getUserLocation()" src="pics/getlocation-btn.png">
+      <img class="get-home-image" onClick="map.setCenter(usermarker.position)" src="pics/homebutton.png"></div>
+    </div>
+  </div>
+  <div class="row">
+        <div class="col-md-12" id="filter">
+          <form>
+            <div class="form-group">
+              <label for="beerprice">Ölpris</label>
+              <input type="number" class="form-control" id="beerprice" placeholder="Max ölpris">
+            </div>
+          </form>
+          <button class="btn btn-default">Filtrera</button>
+
+        </div>
+        <div class="col-md-12" id="content"></div>
+        <a href="#" class="scrollToTop"><div id="scrollToToop"><img src="pics/pil.png"></div></a>
+  </div>
+
+
+
+
+
+      <script src="js/footer.js"></script>
+      <script src="js/locations.js"></script>
+      <script src="js/getyoutube.js"></script>
+      <script src="js/getgoogle.js"></script>
+      <script src="https://apis.google.com/js/client.js?onload=init"></script>
+</div>
+</body>
+</html>
