@@ -4,7 +4,7 @@ var stockholm = {lat: 59.335540, lng: 18.079337};
 var zoom = 13;
 var marker;
 
-
+//initialize the map and set the center to stockholm
 function initialize() {
   var mapDiv = document.getElementById('googleMap');
   var myOptions = {
@@ -16,7 +16,7 @@ function initialize() {
 
   map = new google.maps.Map(mapDiv, myOptions); 
 
-  //läs in alla markers (platser)
+  //intitialize all the locations from locations.js
   for (i = 0; i < locations.length; i++) {  
     marker = new google.maps.Marker({
       position: locations[i].position,
@@ -26,6 +26,7 @@ function initialize() {
       icon: locations[i].marker
     });
 
+    //click event for the different markers
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
          return function() {
              getInfo(marker,locations[i]);
@@ -59,7 +60,7 @@ var rad = function(x) {
   return x * Math.PI / 180;
 };
 
-//Funktion för att beräkna avstånd i meter mellan två punkter
+//function to calculate the distance between two locations
 function getDistance(p1, p2) {
   var R = 6378137; // Earth’s mean radius in meter
   var dLat = rad(p2.lat - p1.lat);
@@ -72,7 +73,7 @@ function getDistance(p1, p2) {
   return d; // returns the distance in meter
 };
 
-//Hämtar användarens position och listar hak i närheten
+//gets the users location and outputs a list with places nearby
 function getUserLocation(){
   console.log("get user location");
   $('#content').html("<h3>Hak i närheten!</h3>");
@@ -101,11 +102,9 @@ function getUserLocation(){
     });
   } 
   else {
-    $('#content').html("<h3>Kunde inte hämta position!</h3>");
+    $('#content').html("<h3>Kunde inte hämta position! Kontrollera att GPS är på!</h3>");
     var infoWindow = new google.maps.InfoWindow({map: map});
-
-
-    // Browser doesn't support Geolocation 
+    //show error message if we can't get the user location
     handleLocationError(false, infoWindow, stockholm);
   }
 }
@@ -130,6 +129,9 @@ function toggleBounce(marker) {
   }
 }
 
+//output info about the different locations
+//triggered from the marker click-event
+//"placeobj" is an object in location.js
 function getInfo(marker,placeobj) {
   console.log("getInfo: "+ placeobj.title);
   $('#content').html("<div id='place-top'><span class='placetitle'>"+placeobj.title+"</span><p class='placeaddress'>"+placeobj.address+"</p><p class='placetub'> (T: "+placeobj.tunnelbana+")</p><div class='placerating'>"+placeobj.rating+"/5</div></div><span class='placeprice'>Stor stark: "+placeobj.price+"kr</span><span class='placedescription'>"+placeobj.description+"</span>");
@@ -139,6 +141,7 @@ function getInfo(marker,placeobj) {
   map.setCenter(placeobj.position);
 }
 
+//click event when clicking the filter-button
 $('#filter button').click(function() {
     $('#content').html("");
     var beerprice = $('#beerprice').val();
